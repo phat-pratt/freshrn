@@ -1,5 +1,6 @@
-import { useCallback } from 'react';
-import { Text, StatusBar, StyleSheet, Button, View } from 'react-native';
+import { Text, StatusBar, StyleSheet, View } from 'react-native';
+import { useAppSelector } from '../../store/hooks';
+import selectors from '../../store/selectors';
 
 const styles = StyleSheet.create({
     container: {
@@ -10,15 +11,13 @@ const styles = StyleSheet.create({
     },
 });
 
-const ProfileContainer = ({ navigation }) => {
-    const onNavigateToSettings = useCallback(() => {
-        navigation.navigate('Settings');
-    }, [navigation]);
+const ProfileContainer = () => {
+    // The `state` arg is correctly typed as `RootState` already
+    const user = useAppSelector(selectors.user.loggedInUser);
 
     return (
         <View style={styles.container}>
-            <Text>Profile</Text>
-            <Button title={'Settings'} color={'red'} onPress={onNavigateToSettings} />
+            <Text>Welcome, {user.user_name}</Text>
             <StatusBar />
         </View>
     );
