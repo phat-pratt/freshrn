@@ -1,0 +1,67 @@
+{
+    // Enable/disable JavaScript validation.
+    "editor.formatOnSave": false,
+    //eslint plugin
+    "eslint.options": {
+      "useEslintrc": true,
+      // "autoFixOnSave": true,
+      "extensions": [".js", ".jsx", ".d.ts"]
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "editor.suggestSelection": "first",
+    "editor.linkedEditing": true,
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+  ],
+    /* TailwindCSS */
+    "headwind.classRegex": {
+      "javascript": "tw\\('([_a-zA-Z0-9\\{\\}\\s\\-\\\\:\/]+)'",
+      "javascriptreact": "tw\\('([_a-zA-Z0-9\\{\\}\\s\\-\\\\:\/]+)'",
+      "jsx": "tw\\('([_a-zA-Z0-9\\{\\}\\s\\-\\\\:\/]+)'",
+    },
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    },
+    "launch": {
+      "configurations": [],
+      "compounds": []
+    },
+    "color-highlight.languages": [
+      "*"
+    ],
+    "git.suggestSmartCommit": false,
+    "prettier.singleQuote": true,
+    "zenMode.restore": false,
+    "audioCues.volume": 15,
+    "audioCues.lineHasFoldedArea": "off",
+    "audioCues.lineHasError": "off",
+    "audioCues.lineHasBreakpoint": "off",
+    "editor.renderWhitespace": "all",
+    "editor.cursorBlinking": "expand",
+    "zenMode.hideActivityBar": false,
+    "codesnap.transparentBackground": true,
+    "prettier.useTabs": true,
+    "[python]": {
+      "editor.formatOnType": true
+    },
+    "javascript.validate.enable": false,
+    "typescript.validate.enable": true,
+    "editor.fontLigatures": false,
+    "editor.stickyScroll.enabled": true,
+    "workbench.colorTheme": "Default Dark+",
+    "window.zoomLevel": -1,
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+  }
+  
+  
