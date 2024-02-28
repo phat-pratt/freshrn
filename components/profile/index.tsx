@@ -1,6 +1,7 @@
 import { Text, StatusBar, StyleSheet, View } from 'react-native';
-import { useAppSelector } from '../../store/hooks';
+import { useGetUserInfoQuery } from '../../services/api';
 import selectors from '../../store/selectors';
+import { useSelector } from 'react-redux';
 
 const styles = StyleSheet.create({
     container: {
@@ -12,12 +13,14 @@ const styles = StyleSheet.create({
 });
 
 const ProfileContainer = () => {
-    // The `state` arg is correctly typed as `RootState` already
-    const user = useAppSelector(selectors.user.loggedInUser);
+    const user = useSelector(selectors.user.loggedInUser);
+    const { data, isLoading } = useGetUserInfoQuery(1);
 
     return (
         <View style={styles.container}>
-            <Text>Welcome, {user.user_name}</Text>
+            <Text>{`Welcome,\n${data?.full_name}`}</Text>
+            <Text>id: {data?.id}</Text>
+            <Text>username: {data?.user_name}</Text>
             <StatusBar />
         </View>
     );

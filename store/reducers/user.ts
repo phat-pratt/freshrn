@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { LoggedInUser } from '../../types/user';
 
-export interface UserState {
-    id: number | null;
+export interface UserState extends LoggedInUser {
     token: string | null;
-    user_name: string | null;
-    full_name: string | null;
+    lastSession: 'string' | null;
 }
 
 const initialState: UserState = {
@@ -13,25 +12,20 @@ const initialState: UserState = {
     token: null,
     user_name: 'Guest',
     full_name: null,
+    lastSession: null,
 };
 
 export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        updateToken: state => {
-            console.log(state);
-        },
-        logout: state => {
-            console.log(state);
-        },
-        updateUserInfo: (state, action: PayloadAction<{ user_name: string; full_name: string }>) => {
-            console.log(state, action);
-        },
+        login: (state, action) => {},
+        logout: (state, action) => {},
+        register: (state, action: PayloadAction<{ user_name: string; full_name: string }>) => {},
     },
 });
 
 // Action creators are generated for each case reducer function
-export const { updateToken, logout, updateUserInfo } = userSlice.actions;
+export const { login, logout, register } = userSlice.actions;
 
 export default userSlice.reducer;
